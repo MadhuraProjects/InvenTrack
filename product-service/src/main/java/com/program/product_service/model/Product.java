@@ -1,0 +1,22 @@
+package com.program.product_service.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(value="product")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
+public class Product {
+    @Id
+    private ObjectId id;
+    private String name;
+    private String description;
+    private int price;
+}
